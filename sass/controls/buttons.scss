@@ -1,0 +1,201 @@
+.button {
+  @include fF(14px, 17px, 400px, 1920px, 34px);
+  padding: 0.85em 2em;
+  color: $bgBlack;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  @include bp(350px)  {
+    padding: 0.85em 1em;
+  }
+}
+.button:hover {
+  background-color: #08cf63;
+}
+
+.btn--hero {
+  box-shadow: 0px 0px 14px 1px #00ed7b;
+  background: #fff;
+}
+.btn--about {
+  background: #00c058;
+  color: #fff;
+  @include bp(768px) {
+    width: 100%;
+  }
+  
+}
+.btn--problems {
+  @include fF(14px, 70px, 400px, 1920px, 23px);
+  padding: 0.67em 1.5em;
+  color: #181818;
+  //  text-transform: uppercase;
+  background: #ff004c;
+  /* кнопка */
+  box-shadow: 0px 2px 11px rgba(227, 42, 97, 0.5), inset 0px -4px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+  white-space: nowrap;
+}
+.swiper-pagination {
+  margin-top: 37px;
+  left: 0;
+  width: 100%;
+  position: relative;
+  z-index: 5;
+}
+.swiper-pagination-clickable .swiper-pagination-bullet {
+  margin: 0 4px;
+  width: 20px;
+  height: 20px;
+  background: #7b71b6;
+}
+.fixed__footer--btn {
+  padding: 0.2em 1.5em;
+  flex: 0 1 360px;
+  background-color: #ff004c;
+  box-shadow: 0px 2px 11px rgba(227, 42, 97, 0.5), inset 0px -4px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 32px;
+  color: #fff;
+  @include fF(12px, 27px, 400px, 1920px, 23px);
+}
+.gamburger__menu {
+  display: none;
+  @include bp(768px) {
+    display: block;
+  }
+}
+.button_container {
+  position: fixed;
+  top: 3.5%;
+  right: 10%;
+  height: auto;
+  width: 52px;
+  cursor: pointer;
+  z-index: 100;
+  transition: opacity 0.25s ease;
+}
+
+.button_container.active .top {
+  transform: translateY(18px) translateX(0) rotate(45deg);
+  background: #fff;
+}
+.button_container.active .middle {
+  opacity: 0;
+  background: #fff;
+}
+.button_container.active .bottom {
+  transform: translateY(-11px) translateX(0) rotate(-45deg);
+  background: #fff;
+}
+.button_container span {
+  background: #fff;
+  border-radius: 1px;
+  height: 3.26px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+.button_container span:nth-of-type(2) {
+  top: 14px;
+}
+.button_container span:nth-of-type(3) {
+  top: 28px;
+}
+
+.overlay {
+  position: fixed;
+  background: #1abc9c;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+  overflow: hidden;
+}
+.overlay.open {
+  opacity: 0.9;
+  visibility: visible;
+  height: 100%;
+}
+.overlay.open li {
+  animation: fadeInRight 0.5s ease forwards;
+  animation-delay: 0.35s;
+}
+.overlay.open li:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+.overlay.open li:nth-of-type(3) {
+  animation-delay: 0.45s;
+}
+.overlay.open li:nth-of-type(4) {
+  animation-delay: 0.5s;
+}
+.overlay nav {
+  position: relative;
+  height: 70%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  font-weight: 400;
+  text-align: center;
+}
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+}
+.overlay ul li {
+  display: block;
+  height: 25%;
+  height: calc(100% / 4);
+  min-height: 50px;
+  position: relative;
+  opacity: 0;
+}
+.overlay ul li a {
+  display: block;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  overflow: hidden;
+}
+.overlay ul li a:hover:after,
+.overlay ul li a:focus:after,
+.overlay ul li a:active:after {
+  width: 100%;
+}
+.overlay ul li a:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  transform: translateX(-50%);
+  height: 3px;
+  background: #fff;
+  transition: 0.35s;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}

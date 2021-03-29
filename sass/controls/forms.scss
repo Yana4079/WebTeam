@@ -1,0 +1,314 @@
+.career__form--title {
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.5em;
+  color: rgba(255, 255, 255, 0.6);
+}
+.career__form--title--vacancy {
+  font-size: 26px;
+  margin-bottom: 43px;
+  width: 64%;
+}
+.dropdown__link {
+  padding: 8px 15px;
+}
+
+.flex-outer,
+.flex-inner {
+  list-style-type: none;
+  padding: 0;
+}
+
+.flex-outer {
+  max-width: 498px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.flex-outer li,
+.flex-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-inner {
+  padding: 0 8px;
+}
+
+.flex-outer > li:not(:last-child) {
+  margin-bottom: 56px;
+}
+
+.flex-outer li label,
+.flex-outer li p {
+  padding: 8px;
+  font-weight: 300;
+  letter-spacing: 0.09em;
+}
+
+.flex-outer > li > label,
+.flex-outer li p {
+  flex: 1 0 120px;
+  max-width: 220px;
+}
+
+.flex-outer > li > label + *,
+.flex-inner {
+  flex: 1 0 220px;
+}
+
+.flex-outer li p {
+  margin: 0;
+}
+
+.flex-outer li input:not([type="checkbox"]),
+.flex-outer li textarea {
+  padding: 22px 44px;
+  border-radius: 2px;
+  background: #fff;
+  color: #333;
+}
+
+.flex-outer li label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 15px 31px;
+  border: none;
+  background: #333;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  border-radius: 2px;
+  background: #00c058;
+  @include fF(34px, 34px, 400px, 2560px, 17px);
+}
+
+.flex-outer li label img {
+  margin-right: 25px;
+}
+
+.flex-inner li {
+  width: 100px;
+}
+
+/*style for input*/
+.file-upload input[type="file"] {
+  display: none; /* скрываем input file */
+}
+
+/* задаем стили кнопки выбора файла*/
+
+.file-upload {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  border: none;
+  background: #333;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  border-radius: 2px;
+  background: #00c058;
+  @include fF(34px, 34px, 400px, 2560px, 17px);
+}
+
+.file-upload:hover {
+  background: #1e90ff;
+}
+
+/* Растягиваем label на всю область блока .file-upload */
+
+.file-upload label {
+  display: block;
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  cursor: pointer;
+}
+
+/* стиль текста на кнопке*/
+
+.file-upload span {
+  line-height: 40px;
+
+  font-weight: bold;
+}
+.file-name {
+  margin-bottom: 38px;
+}
+.menu-trigger {
+  display: none;
+  @include bp(795px) {
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 6px;
+    width: 35px;
+    height: 37px;
+    padding: 3px 19px;
+    cursor: pointer;
+    box-sizing: content-box;
+    transition: 0.3s;
+    z-index: 1000;
+    border: none;
+    outline: none !important;
+    background: transparent;
+  }
+}
+
+.sidebar {
+  display: none;
+  @include bp(795px) {
+    display: block;
+    width: 240px;
+    height: 100%;
+    border-right: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+  }
+}
+
+.menu-trigger span {
+  position: relative;
+  display: block;
+  width: 25px;
+  height: 18px;
+  margin: 0 auto;
+  border-top: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+}
+.menu-trigger span:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+}
+
+.sidebar__wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 0 25px 0 0;
+  overflow: auto;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.avatar {
+  position: relative;
+  text-align: center;
+  padding: 10px 0 0 0;
+}
+
+.nav {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.nav__list {
+  padding-bottom: 10px;
+}
+
+.nav__item {
+  position: relative;
+}
+
+.nav__item-curent .nav__link {
+  border-color: #1c894e;
+  font-weight: 600;
+}
+
+.nav__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  border-left: 4px solid transparent;
+  font-weight: 300;
+  transition: all 0.05s ease-out;
+}
+
+.sidebar-active {
+  transform: translateX(0);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: 1s;
+}
+.vacancy__list--form {
+  display: none;
+  @include bp(795px) {
+    display: block;
+    width: 100%;
+  }
+}
+
+.vacansy__form--mob {
+  padding: 5vh 5vh 10vh 5vh;
+}
+.form__row {
+  position: relative;
+  margin-bottom: 14px;
+  @include bp(795px) {
+    position: relative;
+    margin-bottom: 8px;
+  }
+}
+
+
+.load-resumefile::before {
+  content: "";
+  position: absolute;
+  left: 0.5em;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 1em;
+  height: 1.5em;
+  background: url(../img/file.svg) center center/contain no-repeat;
+}
+#cemail-error {
+  width: 100%;
+  padding: 0.8em 1em;
+  margin-top: 10px;
+  color: #fff;
+  background-color: #ff5454;
+  z-index: 1;
+}
+
+#cname-error {
+  width: 100%;
+  padding: 0.8em 1em;
+  margin-top: 10px;
+  color: #fff;
+  background-color: #ff5454;
+  z-index: 1;
+}
